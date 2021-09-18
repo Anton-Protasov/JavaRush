@@ -11,6 +11,9 @@ import java.util.*;
 
 public class Solution {
     public static void main(String[] args) throws Exception {
+
+        // Option 1
+        /*
         Set<Byte> set = new TreeSet<>();
         Scanner scanner = new Scanner(System.in);
         FileInputStream file = new FileInputStream(scanner.nextLine());
@@ -22,5 +25,18 @@ public class Solution {
             System.out.print(el + " ");
         }
         file.close();
+         */
+
+        Set<Integer> set = new TreeSet<>();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        FileInputStream file = new FileInputStream(reader.readLine());
+        while (file.available() > 0) {
+            set.add(file.read());
+        }
+        for (int el : set) {
+            System.out.print(el + " ");
+        }
+        file.close();
+
     }
 }
