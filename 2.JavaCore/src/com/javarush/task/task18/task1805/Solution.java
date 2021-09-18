@@ -27,6 +27,7 @@ public class Solution {
         file.close();
          */
 
+        // Option 2
         Set<Integer> set = new TreeSet<>();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         FileInputStream file = new FileInputStream(reader.readLine());
@@ -37,6 +38,5 @@ public class Solution {
             System.out.print(el + " ");
         }
         file.close();
-
     }
 }
