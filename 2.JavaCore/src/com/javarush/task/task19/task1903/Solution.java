@@ -18,24 +18,20 @@ public class Solution {
     }
 
     public static void main(String[] args) {
-
         /*
-
         int code = 99;
-        int tel = 1234567;
+        int tel = 123456789;
         String telS = String.valueOf(tel);
         int telLength = telS.length();
         char[] telC = new char[10];
         Arrays.fill(telC, '0');
-        for (int i = 9; i <= 0; i--) {
+        for (int i = 9; i >= (telC.length - telS.length()); i--) {
             telC[i] = telS.charAt(--telLength);
         }
         telS = new String(telC);
         String rsl = "+" + code + "(" + telS.substring(0, 3) + ")"
                 + telS.substring(3, 6) + "-" + telS.substring(6, 8) + "-" + telS.substring(8);
-        System.out.println(telS);
         System.out.println(rsl);
-
          */
     }
 
@@ -71,7 +67,7 @@ public class Solution {
             int telLength = telS.length();
             char[] telC = new char[10];
             Arrays.fill(telC, '0');
-            for (int i = 9; i <= 0; i--) {
+            for (int i = 9; i >= (telC.length - telS.length()); i--) {
                 telC[i] = telS.charAt(--telLength);
             }
             telS = new String(telC);
