@@ -31,7 +31,7 @@ public class Solution {
         while (buFile2.ready()) {
             fileList2.add(buFile2.readLine());
         }
-
+/*
         int n1 = 0;
         int n2 = 0;
         while (n1 < fileList1.size() && n2 < fileList2.size()) {
@@ -52,12 +52,37 @@ public class Solution {
         } else if (n2 < fileList2.size()) {
             lines.add(new LineItem(Type.ADDED, fileList2.get(n2)));
         }
+ */
+
+        while (fileList1.size() > 0 && fileList2.size() > 0) {
+            if (fileList1.get(0).equals(fileList2.get(0))) {
+                lines.add(new LineItem(Type.SAME, fileList1.get(0)));
+                fileList1.remove(0);
+                fileList2.remove(0);
+            } else if (!fileList2.get(1).equals(fileList1.get(0))) {
+                lines.add(new LineItem(Type.REMOVED, fileList1.get(0)));
+                fileList1.remove(0);
+            } else {
+                lines.add(new LineItem(Type.ADDED, fileList2.get(0)));
+                fileList2.remove(0);
+            }
+        }
+        if (fileList1.size() > 0) {
+            lines.add(new LineItem(Type.REMOVED, fileList1.get(0)));
+        } else if (fileList2.size() > 0) {
+            lines.add(new LineItem(Type.ADDED, fileList2.get(0)));
+        }
 
         bufferedReader.close();
         file1.close();
         file2.close();
         buFile1.close();
         buFile2.close();
+/*
+        for (LineItem el: lines) {
+            System.out.println(el.type);
+        }
+ */
     }
 
     public static enum Type {
